@@ -1,0 +1,42 @@
+/**my_store
+cat stuff
+category
+price
+quantity
+**/
+
+--Create a cat store database
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, item_name TEXT, section TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO my_store VALUES(1, "Cat bed", "home", 25, 25);
+INSERT INTO my_store VALUES(2, "Cat nip toy", "play", 500, 5);
+INSERT INTO my_store VALUES(3, "Cat brush", "health", 7, 3.5);
+INSERT INTO my_store VALUES(4, "Cat Treat", "food", 850, 2);
+INSERT INTO my_store VALUES(5, "Cat Soup", "food", 450, .5);
+INSERT INTO my_store VALUES(6, "Hairball gel", "health", 70, 7);
+INSERT INTO my_store VALUES(7, "Cat paper", "play", 50, 1);
+INSERT INTO my_store VALUES(8, "Cat jerky", "food", 35, 6);
+INSERT INTO my_store VALUES(9, "Cat nail caps", "health", 5, 5.5);
+INSERT INTO my_store VALUES(10, "Cat frame", "home", 75, 7.5);
+INSERT INTO my_store VALUES(11, "Cat blanket", "home", 85, 35);
+INSERT INTO my_store VALUES(12, "Cat pillow", "home", 85, 30);
+INSERT INTO my_store VALUES(13, "Cat mat", "home", 65, 15);
+INSERT INTO my_store VALUES(14, "Cat stick", "play", 100, 10);
+INSERT INTO my_store VALUES(15, "Cat bowl", "home", 65, 20);
+
+
+
+--display the database ordered by price. 
+SELECT * FROM my_store
+ORDER BY price desc; 
+
+--what is the avg price of items in the home section? 
+SELECT AVG(price) "avg home item price"
+FROM my_store
+where section='home'; 
+
+--what are the most 5 stocked items? 
+SELECT item_name, price, quantity
+FROM my_store
+order by quantity desc
+limit 5; 
